@@ -2,8 +2,8 @@ module.exports={
     handleStateReport: function(request, context) {
        // get device ID passed in during discovery
        var requestMethod = request.directive.header.name;
-       var token = request.directive.endpoint.cookie.key2;
-       var switch_no = request.directive.endpoint.cookie.key3;
+       var token = request.directive.endpoint.cookie.key1;
+       var switch_no = request.directive.endpoint.cookie.key2;
        var powerResult;
        const request1 = require('request');
        

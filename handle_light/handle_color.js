@@ -5,7 +5,7 @@ module.exports={
        var hue = request.directive.payload.color.hue;
        var saturation = request.directive.payload.color.saturation;
        var brightness = request.directive.payload.color.brightness;
-       var token = request.directive.endpoint.cookie.key2;
+       var token = request.directive.endpoint.cookie.key1;
        var switch_no = request.directive.endpoint.cookie.key4;
        const request1 = require('request');
        if (requestMethod === "SetColor") {
