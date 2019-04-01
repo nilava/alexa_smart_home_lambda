@@ -1,6 +1,7 @@
 module.exports={  
     handlePowerControl: function(request, context) {
        // get device ID passed in during discovery
+       const api_url = process.env.API_URL;
        var requestMethod = request.directive.header.name;
        var powerResult;
        var token = request.directive.endpoint.cookie.key1;
@@ -8,7 +9,7 @@ module.exports={
        const request1 = require('request');
        if (requestMethod === "TurnOn") {
            // Make the call to your device cloud for control
-           var url = "https://blynk.tph.org.in/api/" + token + "/update/"+ switch_no + "?value=1";
+           var url = api_url + token + "/update/"+ switch_no + "?value=1";
            process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
            request1(url, function (error, response, body) {
              console.log('error:', error); // Print the error if one occurred
@@ -21,7 +22,7 @@ module.exports={
        }
       else if (requestMethod === "TurnOff") {
        // Make the call to your device cloud for control
-             var url_off = "https://blynk.tph.org.in/api/" + token + "/update/"+ switch_no + "?value=0";
+             var url_off = api_url + token + "/update/"+ switch_no + "?value=0";
              process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
            // Make the call to your device cloud for control and check for success
            request1(url_off, function (error, response, body) {

@@ -1,6 +1,7 @@
 module.exports={  
     handleColorTemperature: function(request, context) {
        // get device ID passed in during discovery
+       const api_url = process.env.API_URL;
        var requestMethod = request.directive.header.name;
        var colorTemperature = request.directive.payload.colorTemperatureInKelvin;
        var token = request.directive.endpoint.cookie.key1;
@@ -8,7 +9,7 @@ module.exports={
        const request1 = require('request');
        if (requestMethod === "SetColorTemperature") {
            // Make the call to your device cloud for control
-           var url = "https://blynk.tph.org.in/api/" + token + "/update/"+ 'v0' + "?value=" + colorTemperature; 
+           var url = api_url + token + "/update/"+ 'v0' + "?value=" + colorTemperature; 
            process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
            request1(url, function (error, response, body) {
              console.log('error:', error); // Print the error if one occurred

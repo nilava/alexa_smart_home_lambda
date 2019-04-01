@@ -1,6 +1,7 @@
 module.exports={  
     handleBrightness: function(request, context) {
        // get device ID passed in during discovery
+       const api_url = process.env.API_URL;
        var requestMethod = request.directive.header.name;
        var brightness = request.directive.payload.brightness;
        var token = request.directive.endpoint.cookie.key1;
@@ -8,7 +9,7 @@ module.exports={
        const request1 = require('request');
        if (requestMethod === "SetBrightness") {
            // Make the call to your device cloud for control
-           var url = "https://blynk.tph.org.in/api/" + token + "/update/"+ switch_no + "?value=" + brightness; 
+           var url = api_url + token + "/update/"+ switch_no + "?value=" + brightness; 
            process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
            request1(url, function (error, response, body) {
              console.log('error:', error); // Print the error if one occurred
@@ -21,7 +22,7 @@ module.exports={
       else if (requestMethod === "AdjustBrightness") {
         
        // Make the call to your device cloud for control
-             var url_get_brightness = "https://blynk.tph.org.in/api/" + token + "/get/"+ switch_no;
+             var url_get_brightness = api_url + token + "/get/"+ switch_no;
              process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
            // Make the call to your device cloud for control and check for success
            request1(url_get_brightness, function (error, response, body) {
@@ -43,7 +44,7 @@ module.exports={
         else if(set_brightness > 100){
         set_brightness=100;
         }
-        var url_set_brightness = "https://blynk.tph.org.in/api/" + token + "/update/"+ switch_no + "?value=" + set_brightness;   
+        var url_set_brightness = api_url + token + "/update/"+ switch_no + "?value=" + set_brightness;   
         process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
         request1(url_set_brightness, function (error, response, body) {
           console.log('error:', error); // Print the error if one occurred

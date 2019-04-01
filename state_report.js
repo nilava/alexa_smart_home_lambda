@@ -1,6 +1,7 @@
 module.exports={  
     handleStateReport: function(request, context) {
        // get device ID passed in during discovery
+       const api_url = process.env.API_URL;
        var requestMethod = request.directive.header.name;
        var token = request.directive.endpoint.cookie.key1;
        var switch_no = request.directive.endpoint.cookie.key2;
@@ -10,7 +11,8 @@ module.exports={
        if (requestMethod === "ReportState") {
         
        // Make the call to your device cloud for control
-             var url_get_state = "https://blynk.tph.org.in/api/" + token + "/get/"+ switch_no;
+             var url_get_state = api_url + token + "/get/"+ switch_no;
+             console.log(url_get_state);
            // Make the call to your device cloud for control and check for success
            process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
            request1(url_get_state, function (error, response, body) {

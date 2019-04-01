@@ -39,7 +39,9 @@ exports.handler = function (request, context) {
         state_report.handleStateReport(request, context);
         }
     }
-  
+
+
+
     function log(message, message1, message2) {
         console.log(message + message1 + message2);
     }
