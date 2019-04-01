@@ -10,8 +10,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-* Nodejs 8.10
 * AWS Lambda (**Ireland Region Only**)
+* Nodejs 8.10
+* [Blynk Alexa Device WebUI]([https://github.com/nilava/alexa_smart_home_device_discovery](https://github.com/nilava/alexa_smart_home_device_discovery)) 
 
 
 ## Installing
