@@ -1,4 +1,6 @@
 # Blynk Alexa Lambda
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnilava%2Falexa_smart_home_lambda.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnilava%2Falexa_smart_home_lambda?ref=badge_shield)
+
 
 Alexa Lambda for Blynk API
 
@@ -41,8 +43,9 @@ See also the list of [contributors](https://github.com/nilava/alexa_smart_home_l
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnilava%2Falexa_smart_home_lambda.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnilava%2Falexa_smart_home_lambda?ref=badge_large)
+
 ## Acknowledgments
 
 * .
-
-
